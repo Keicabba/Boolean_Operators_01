@@ -1,0 +1,40 @@
+Try to solve on paper the following boolean algebra operations:
+
+    [A]: 2 <= 2 && !true
+    [B]: !false && 3 > 2
+    [C]: considering that t=false and f=true: !(!t || f)
+    [D]: 6 > 6 ^ !(true && true)
+
+Then compare your solutions with a Java program that tests the validity of your assumptions.
+
+
+caso A:
+Primo parametro: 2 è minore o uguale a 2. Questa affermazione è vera.
+Secondo parametro: diverso (!) da vero. Quindi falso.
+L'operatore and (&&) è un prodotto logico in cui Vero ha valore 1 e Falso ha valore 0.
+Quindi: Vero && Falso equivale a 1 * 0 che da come prodotto 0. Quindi il risultato è Falso
+
+Caso B:
+Primo parametro: Diverso da falso. Quindi Vero
+Secondo parametro: 3 è maggiore di 2. Questa affermazione è vera.
+L'operatore and (&&) come detto prima, è un prodotto logico.
+Quindi: Vero && Vero equivale a 1 * 1 che da come prodotto 1. Quindi il risultato è vero
+
+Caso C:
+considerando che t è falso e f è vero:
+cominciamo con il riportare le informazioni
+Diverso da (diverso da falso + vero)
+    i valori tra parentesi sono:
+        diverso da falso. Quindi vero
+        or (||) è un operatore di somma logica. quindi si otterrà un valore falso solo in caso di 0 + 0
+        Vero. non ha bisogno di essere tradotto.
+    fuori la parentesi c'è una negazione (!) che inverte il valore che risulta in parentesi
+in conclusione: non(vero+vero) = non(vero) = falso
+
+Caso D:
+Il primo parametro è 6 > 6. In quanto uguali, la prima parte risulta falsa
+L'operatore XOR (^) è una sottrazione logica.
+    quindi si ottiene un risultato diverso da 0 solo a condizione che i parametri siano diversi tra loro
+Il secondo parametro è composto da:
+    non(vero * vero) = non (vero) = falso
+Ricapitolando falso - falso corrisponde a 0 - 0. quindi il risultato finale sarà falso
